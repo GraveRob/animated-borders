@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+body {
+    --background-color: rgb(16, 3, 41);
+    --border-radius: 50%; /*5% for beautiful square and 50% for beautiful circle !*/
+
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--background-color);
+    color: white;
+}
+
+.box {
+    width: 40%;
+    height: 85vh;
+    margin: 0 auto;
+}
+
+.card {
+    border: 2px solid white;
+    border-radius: var(--border-radius);
+    padding: 0 55px;
+    height: 100%;
+
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.5em;
+    line-height: 2.2em;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 0 10px 10px rgb(114, 10, 199), 0 0 20px 20px rgb(85, 9, 148);
+}
+
+.card > hr {
+    width: 8.5em;
+}
+
+.card::before {
+    content: "";
+    width: 50%;
+    height: 150%;
+    background: rgb(124, 2, 206);
+    position: absolute;
+    z-index: -2;
+
+    left: 25%;
+    top: -17%;
+
+    animation: roundMove 2s linear infinite;
+}
+
+ .card::after {
+    --size: 96%;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    position: absolute;
+    z-index: -1;
+
+    left: 2%;
+    top: 2%;
+} 
+
+@keyframes roundMove {
+    0% {
+        transform: rotate(0deg);
+        /* filter: hue-rotate(0deg); */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* filter: hue-rotate(360deg); */
+    }
+}
